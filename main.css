@@ -1,21 +1,36 @@
-@keyframes place-order {
+@keyframes orderTaker{
     from {
         bottom:40px;
-        left: 230px;
+        left: 350px;
     }
     to {
         bottom:40px;
-        right: 400px;
+        left: 850px;
     }
 }
 
+@keyframes getPizza{
+    from{
+        top:10px;
+        left: 1100px;
+    }
+    to{
+        left: 1150px;
+        top: 450px;
+    }
+}
+body{
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
 
 
 
 .container{
     background-color: blue;
-    height: 98vh;
-    width: 98vw;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     padding: 0px;
 }
@@ -36,11 +51,18 @@
     position: absolute;
     bottom: 40px;
     left: 230px;
-    animation-name: place-order;
+    animation-name: orderTaker;
     animation-duration: 3s;
-    animation-timing-function: ease-in-out;
-    animation-duration:  infinite;
+    animation-iteration-count: infinite;
     animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+.paused{
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    -o-animation-play-state:paused; 
+    animation-play-state:paused;
 }
 .pizza-delivery{
     z-index: 20;
@@ -49,21 +71,31 @@
 .cook{
     z-index: 20;
     position: absolute;
+    left: 1150px;
+    top: 10px;
+    animation-name: getPizza;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
 }
 .computer{
     position: absolute;
     bottom: 150px;
     z-index: 2;
-    left: 230px;
+    left: 300px;
     height: 100px;
 }
 .freezer{
     position: absolute;
-    right: 40px;
-    bottom: 100px;
+    left: 1300px;
+    top: 330px;
+    width: 200px;
 }
 .oven{
     position: absolute;
+    left: 1000px;
+    height: 150px;
 }
 .pizza-box{
     position: absolute;
@@ -89,6 +121,6 @@
 .mic-table{
     position: absolute;
     bottom: 50px;
-    right: 300px;
+    left: 950px;
     height: 145px;
 }
