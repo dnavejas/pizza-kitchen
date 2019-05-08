@@ -1,0 +1,48 @@
+.container{
+    background-color: blue;
+    height: 98vh;
+    width: 98vw;
+    display: flex;
+}
+.customers{
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+}
+.pizza-store{
+    display: inline-block;
+    width: 90%;
+}
+.order-taker{
+    z-index: 20;
+    position: absolute;
+}
+.pizza-delivery{
+    z-index: 20;
+    position: absolute;
+}
+.cook{
+    z-index: 20;
+    position: absolute;
+}
+.computer{
+    position: absolute;
+
+}
+.freezer{
+    position: absolute;
+}
+.oven{
+    position: absolute;
+}
+.pizza-box{
+    position: absolute;
+}
+.table{
+    position: absolute;
+}
+.frozen-pizza{
+    position: absolute;
+    height: 10px;
+    width: 10px;
+}
