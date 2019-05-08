@@ -1,13 +1,31 @@
+@keyframes place-order {
+    from {
+        bottom:40px;
+        left: 230px;
+    }
+    to {
+        bottom:40px;
+        right: 400px;
+    }
+}
+
+
+
+
 .container{
     background-color: blue;
     height: 98vh;
     width: 98vw;
     display: flex;
+    padding: 0px;
 }
 .customers{
     display: inline-block;
     width: 10%;
     height: 100%;
+    margin: 0px;
+    border: none;
+    padding: 0px;
 }
 .pizza-store{
     display: inline-block;
@@ -16,6 +34,13 @@
 .order-taker{
     z-index: 20;
     position: absolute;
+    bottom: 40px;
+    left: 230px;
+    animation-name: place-order;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-duration:  infinite;
+    animation-direction: alternate;
 }
 .pizza-delivery{
     z-index: 20;
@@ -27,10 +52,15 @@
 }
 .computer{
     position: absolute;
-
+    bottom: 150px;
+    z-index: 2;
+    left: 230px;
+    height: 100px;
 }
 .freezer{
     position: absolute;
+    right: 40px;
+    bottom: 100px;
 }
 .oven{
     position: absolute;
@@ -38,11 +68,27 @@
 .pizza-box{
     position: absolute;
 }
-.table{
+.order-table{
     position: absolute;
+    height: 150px;
+    bottom: 40px;
 }
 .frozen-pizza{
     position: absolute;
     height: 10px;
     width: 10px;
+}
+.microphone{
+    position: absolute;
+    bottom: 170px;
+    right: 400px;
+    height: 50px;
+    width: 50px;
+    z-index: 2;
+}
+.mic-table{
+    position: absolute;
+    bottom: 50px;
+    right: 300px;
+    height: 145px;
 }
