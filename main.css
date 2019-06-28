@@ -19,6 +19,16 @@
         top: 450px;
     }
 }
+@keyframes deliverPizza{
+    from {
+        top:0px;
+        left: 280px;
+    }
+    to {
+        top:0px;
+        left:1000px;
+    }
+}
 body{
     overflow: hidden;
     padding: 0px;
@@ -63,6 +73,13 @@ body{
 .pizza-delivery{
     z-index: 20;
     position: absolute;
+    top: 0px;
+    left: 100px;
+    animation-name: deliverPizza;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
 }
 .cook{
     z-index: 20;
@@ -96,6 +113,8 @@ body{
 }
 .pizza-box{
     position: absolute;
+    z-index: 2;
+    top: 20px;
 }
 .order-table{
     position: absolute;
@@ -123,4 +142,9 @@ body{
     bottom: 50px;
     left: 950px;
     height: 145px;
+}
+.pizza-table{
+    position: absolute;
+    top: 60px;
+    z-index: 1;
 }
