@@ -4,6 +4,8 @@ let pause = document.getElementById("pause");
 let cook = document.getElementById("cook");
 let fridge = document.getElementById("freezer");
 let deliveryman = document.getElementById("pizza-delivery");
+let frozenPizza = document.getElementById("frozen-pizza");
+let oven = document.getElementById("oven")
 
 // console.log(e)
 function toggleChef(e) {
@@ -15,23 +17,22 @@ function toggleChef(e) {
 function grabPizza(e) {
 	switch(e.type) {
 		case "animationstart":
-		console.log(e)
 			break;
 			
 		case "animationend":
-		console.log(e)
 		  break;
 
 		case "animationiteration":
-		console.log(e)
 			if(cook.attributes["src"].nodeValue.indexOf('right') > 0) {
-				console.log("test");
-				cook.attributes['src'].nodeValue = "pizza-man-left.gif";
+				cook.attributes['src'].nodeValue = "pizza-man-frozen.gif";
 				fridge.attributes['src'].nodeValue = "freezer-open.png";
+				console.dir(frozenPizza);
+				frozenPizza.style.zIndex = 3;
 			}
 			else {
 				cook.attributes['src'].nodeValue = "pizza-man-right.gif";
 				fridge.attributes['src'].nodeValue = "freezer-closed.png";
+				frozenPizza.style.zIndex = 1;
 			}
 		  break;
 	}

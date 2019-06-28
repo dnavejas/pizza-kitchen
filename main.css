@@ -24,9 +24,6 @@ body{
     padding: 0px;
     margin: 0px;
 }
-
-
-
 .container{
     background-color: blue;
     height: 100vh;
@@ -57,7 +54,6 @@ body{
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
 }
-
 .paused{
     -webkit-animation-play-state:paused;
     -moz-animation-play-state:paused;
@@ -91,6 +87,7 @@ body{
     left: 1300px;
     top: 330px;
     width: 200px;
+    z-index: 2;
 }
 .oven{
     position: absolute;
@@ -107,8 +104,11 @@ body{
 }
 .frozen-pizza{
     position: absolute;
-    height: 10px;
-    width: 10px;
+    height: 50px;
+    width: 50px;
+    top: 380px;
+    left: 1340px;
+    z-index: 1;
 }
 .microphone{
     position: absolute;
