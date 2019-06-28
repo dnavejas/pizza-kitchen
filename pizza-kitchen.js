@@ -3,11 +3,13 @@ let orderTaker = document.querySelector("#order-taker");
 let pause = document.getElementById("pause");
 let cook = document.getElementById("cook");
 let fridge = document.getElementById("freezer");
+let deliveryman = document.getElementById("pizza-delivery");
 
 // console.log(e)
 function toggleChef(e) {
     orderTaker.classList.toggle('paused');
-    cook.classList.toggle('paused');
+		cook.classList.toggle('paused');
+		deliveryman.classList.toggle('paused')
 }
 
 function grabPizza(e) {
@@ -16,7 +18,6 @@ function grabPizza(e) {
 		console.log(e)
 			break;
 			
-
 		case "animationend":
 		console.log(e)
 		  break;
@@ -24,13 +25,13 @@ function grabPizza(e) {
 		case "animationiteration":
 		console.log(e)
 			if(cook.attributes["src"].nodeValue.indexOf('right') > 0) {
-                console.log("test");
-                cook.attributes['src'].nodeValue = "pizza-man-left.gif";
-                fridge.attributes['src'].nodeValue = "freezer-open.png";
-                
+				console.log("test");
+				cook.attributes['src'].nodeValue = "pizza-man-left.gif";
+				fridge.attributes['src'].nodeValue = "freezer-open.png";
 			}
 			else {
 				cook.attributes['src'].nodeValue = "pizza-man-right.gif";
+				fridge.attributes['src'].nodeValue = "freezer-closed.png";
 			}
 		  break;
 	}
@@ -46,7 +47,6 @@ function takeOrder(e){
 
 		case "animationiteration":
 			if(orderTaker.attributes["src"].nodeValue.indexOf('right') > 0) {
-				console.log("testing");
 				orderTaker.attributes['src'].nodeValue = "pizza-man-left.gif";
 				grabPizza;
 			}
@@ -60,8 +60,11 @@ function takeOrder(e){
 orderTaker.addEventListener("animationstart",takeOrder, false);
 orderTaker.addEventListener("animationend",takeOrder, false);
 orderTaker.addEventListener("animationiteration",takeOrder, false);
-// cook.addEventListener("animationstart",grabPizza, false);
-// cook.addEventListener("animationend",grabPizza, false);
-// cook.addEventListener("animationiteration",grabPizza, false);
+cook.addEventListener("animationstart",grabPizza, false);
+cook.addEventListener("animationend",grabPizza, false);
+cook.addEventListener("animationiteration",grabPizza, false);
+deliveryman.addEventListener("animationstart",grabPizza, false);
+deliveryman.addEventListener("animationend",grabPizza, false);
+deliveryman.addEventListener("animationiteration",grabPizza, false);
 
 pause.addEventListener("click", toggleChef, false);
