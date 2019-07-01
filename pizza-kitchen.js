@@ -25,7 +25,7 @@ function takeOrder(e){
 		case "animationiteration":
 			if(orderTaker.offsetLeft == 850) {
 				orderTaker.attributes['src'].nodeValue = "pizza-man-left.gif";
-				grabPizza();
+				grabPizza;
 			}
 			else {
 				orderTaker.attributes['src'].nodeValue = "pizza-man-right.gif";
